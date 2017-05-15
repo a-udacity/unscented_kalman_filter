@@ -16,11 +16,17 @@ int main() {
 * Programming assignment calls
 *******************************************************************************/
 
-    MatrixXd Xsig = MatrixXd(11, 5);
-    ukf.GenerateSigmaPoints(&Xsig);
+//    MatrixXd Xsig = MatrixXd(11, 5);
+//    ukf.GenerateSigmaPoints(&Xsig);
+//    std::cout << "Xsig = " << std::endl << Xsig << std::endl;
+
+    /**
+     * Augmented Sigma Points
+     */
+    MatrixXd Xsig_aug = MatrixXd(15, 7);
+    ukf.AugmentedSigmaPoints(&Xsig_aug);
 
     //print result
-    std::cout << "Xsig = " << std::endl << Xsig << std::endl;
 
     return 0;
 }
